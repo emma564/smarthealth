@@ -1,0 +1,76 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>smarthealth</title>
+
+    <link href="fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'smart/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'smart/wizard.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'smart/aid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+</head>
+<header>
+    <nav  class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}">SmarthealthCon</a>
+        </div>
+        <!--items-->
+        <div class="collapse navbar-collapse" id="topNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active" style="padding: 5px 0px">
+                    <a href="{% url 'home' %}">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Start
+                    </a>
+                </li>
+                <li class="#" style="padding: 5px 0px">
+                    <a href="{% url 'firstaid' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;FirstAid
+                    </a>
+                </li>
+
+
+            </ul>
+            <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="disease1" value=""  style="padding: 5px 0px">
+                </div>
+                <button type="submit" class="btn btn-default"  style="padding: 5px 0px">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right" >
+                 <li class="#"  style="padding: 5px 0px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;MyDetails
+                    </a>
+                </li>
+                  <li class="#"  style="padding: 5px 0px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+</header>
+{% block content  %}
+
+{% endblock %}
+<footer class="footer">
+    <div class="footer1">
+    <p> ©2018 Smart health Con</p>
+    <p>All rights resevered</p>
+    <p>Terms & Conditions Privacy Policy</p>
+    </div>
+</footer>
+
+    <script  type="text/javascript"  src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script  type="text/javascript"  src="{% static 'js/bootstrap.js' %}"></script>
+     <script  type="text/javascript"  src="{% static 'js/index.js' %}"></script>

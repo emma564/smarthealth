@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+
+{%  block content  %}
+<div class="container">
+    <div class="row">
+        <section>
+            <div class="wizard">
+              <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#infor" data-toggle="tab" aria-controls="infor" role="tab" title="Infor">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user" style="padding-top: 17px"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#sys" data-toggle="tab" aria-controls="sys" role="tab" title="Symptoms">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-flag" style="padding-top: 17px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#duration" data-toggle="tab" aria-controls="duration" role="tab" title="Duration">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-time" style="padding-top: 17px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#condition" data-toggle="tab" aria-controls="condition" role="tab" title="Condition">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-equalizer" style="padding-top: 17px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled" >
+                        <a href="#detials" data-toggle="tab" aria-controls="detials" role="tab" title="Details">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-move" style="padding-top: 17px"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#treatment" data-toggle="tab" aria-controls="treatment" role="tab" title="Treatment">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok" style="padding-top: 17px"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="infor">
+                       <div class="step1">
+                           step1
+                             <h3><span>SmarthealthCon</span></h3>
+                           <p>Identifies possible conditions and treatment related to your symptoms.</p>
+
+                                   <p class="p1">Age</p>
+
+                                     <input type="number"required="required" name="age" id="u_age" >
+                                         <br>
+                                   <p class="p2" > Select your Gender</p>
+
+                                      <input type="radio" name="gender" value="male" >Male
+
+                                      <input type="radio" name="gender" value="female">Female
+                                          <br>
+
+                       </div>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" name="step11" class="btn btn-primary next-step" id ='submit1'>Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="sys">
+                        <div class="row">
+                              <div class="col-md-8">
+                                  step2
+
+                                   <div class="step2" >
+                                      <form id="form2" >
+                                      <h3>Enter your symptoms</h3>
+                                          <!--your input textbox-->
+
+                                          <input type="text" id="sys_list" list="symptomList"/>
+                                          <input type="button" id="add" value="Add" class="btn btn-info">
+                                          <datalist id="symptomList">
+                                              <option value="chills" name="chills" />
+                                              <option value="cold" name="cold" />
+                                              <option value="muscle pains"name="muscle pain" />
+                                              <option value="vomiting" name="vomiting" />
+
+                                           </datalist>
+                                         <p>Or </p>
+                                         <p>Select from here</p>
+                                             <input type="button" class="btn btn-info" id="fat1" name="fatique" value="fatigue">
+                                             <input type="button" class="btn btn-info" id="head1"  name="headache" value="headache">
+                                             <input type="button" class="btn btn-info" id="fever1" name="fever" value="fever">
+                                             <input type="button" class="btn btn-info" id="nau1" name="nausea" value="nausea">
+                                          <br>
+                                      </form>
+
+                                   </div>
+                              </div>
+
+                                 <div class="col-md-4">
+                                      <div class="receiver1" >
+                                          <form id="recevied_data" method="POST" >
+
+                                        <p><span>Age: </span> <span class="age_feedback"></span></p>
+
+                                          <p><span>Gender :</span> <span class="gender_feedback"></span> </p>
+                                          <br>
+                                          <h3>symptoms</h3>
+                                          <p><span class="symptoms"></span> <input type="hidden" value="" id="symptom22" name="symptom22">  </p>
+
+                                          <p><span class="fat2"></span> <input type="hidden" value="" id="fat3" name="symptom22"></p>
+                                          <p><span class="head2"></span> <input type="text" value="" id="head3" name="headache"></p>
+                                          <p><span class="fever2"></span> <input type="text" value="" id="fever3" name="symptom22"></p>
+                                          <p><span class="nau2"></span> <input type="hidden" value="" id="nau3" name="symptom22"></p><br>
+                                          <p><span class="Chills2"></span> <input type="hidden" value="" id="chills3" name="symptom22"></p>
+                                          <p><span class="cold2"></span><input type="hidden" value="" id="cold3" name="cold"></p>
+                                           <p><span class="musclepain2"></span><input type="hidden" value="" id="musclepain3" name="symptom22"></p>
+                                          <p><span class="vomiting2"></span><input type="hidden" value="" id="vomiting3" name="symptom22"></p>
+
+
+
+                                          </form>
+                                      </div>
+                                 </div>
+
+
+                        </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane" role="tabpanel" id="duration">
+                         <div class="row">
+                              <div class="col-md-8">
+                                   <div class="step3">
+
+
+                                              <h3>history of Symptom</h3>
+                                                <p>How long have the symptoms been present</p>
+                                                <br>
+                                                <select  id="dration">
+                                                    <option >Hours</option>
+                                                    <option >Days</option>
+                                                    <option >Weeks</option>
+                                                </select>
+                                                <br>
+                                                <br>
+                                                <input type="number" id="times1" >
+
+                                   </div>
+                              </div>
+
+                              <div class="col-md-4">
+
+                                      <div class="receiver2" >
+
+
+                                          <p><span>Age: </span> <span class="age_feedback"></span></p>
+
+                                          <p><span>Gender :</span> <span class="gender_feedback"></span> </p>
+                                          <br>
+                                          <h3>symptoms</h3>
+                                          <br>
+                                          <p><span class="fat2"></span></p>
+                                          <input type="hidden" name="nm" value="fat2" />
+                                          <p><span class="head2"></span></p>
+                                          <p><span class="fever2"></span></p>
+                                          <p><span class="nau2"></span></p><br>
+                                          <p>How long have symptom been present</p>
+                                          <p> <span class="duration1"></span></p>
+                                          <span class="times2"></span>
+
+
+                                      </div>
+
+
+                               </div>
+
+                         </div>
+                          <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                          </ul>
+
+                    </div>
+
+                    <div class="tab-pane" role="tabpanel" id="condition">
+                        <div class="step4">
+                         {{ x }}
+
+                        </div>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+
+                     <div class="tab-pane" role="tabpanel" id="details">
+                          <div class="step5">
+                              step5
+                        </div>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane" role="tabpanel" id="treatment">
+                          <div class="step6">
+
+                              step6
+                           </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>
+
+{% endblock %}
